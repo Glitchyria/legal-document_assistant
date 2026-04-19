@@ -2,6 +2,12 @@
 
 Agentic AI capstone project for a paralegal or junior lawyer who needs quick, grounded answers from legal documents.
 
+## Student Details
+
+- Name: Ria Agrawal
+- Roll Number: 23053069
+- Batch/Program: CSE B.Tech
+
 ## Problem Statement
 
 Legal teams spend significant time reading contracts, case notes, filing checklists, and compliance documents. A paralegal or junior lawyer often needs fast answers, but generic chatbots can hallucinate legal details. This project builds a legal document assistant that retrieves from a controlled legal knowledge base, answers only from available context, remembers conversation details during a session, uses a utility tool when needed, and admits uncertainty instead of inventing information.
@@ -9,7 +15,7 @@ Legal teams spend significant time reading contracts, case notes, filing checkli
 ## Capstone Requirements Covered
 
 - LangGraph-style `StateGraph` workflow with 8 nodes: memory, router, retrieval, skip retrieval, tool, answer, eval, save.
-- ChromaDB RAG over 10 legal knowledge documents.
+- ChromaDB RAG over exactly 10 legal knowledge documents.
 - SentenceTransformer `all-MiniLM-L6-v2` embeddings when installed.
 - MemorySaver with `thread_id` when LangGraph is installed.
 - Tool route for date, deadline, and simple legal fee or page-count calculations.
@@ -66,26 +72,6 @@ streamlit run capstone_streamlit.py
 
 The project includes lightweight fallbacks for local demonstration if ChromaDB, SentenceTransformers, or LangGraph are not installed. Install the requirements for the full capstone toolchain.
 
-## GitHub Submission
+## Submission
 
-Create a public repository named `legal-document-assistant`, then run:
-
-```bash
-git init
-git add .
-git commit -m "Add Legal Document Assistant capstone project"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/legal-document-assistant.git
-git push -u origin main
-```
-
-Submit the public GitHub URL and the ZIP file from `submission/`.
-
-## Mandatory Details
-
-Update the placeholders below before final submission:
-
-- Name: `YOUR NAME`
-- Roll Number: `YOUR ROLL NUMBER`
-- Batch/Program: `YOUR BATCH / PROGRAM`
-
+Submit the public GitHub repository link, the project ZIP file, and `docs/Project_Documentation.pdf` in the capstone Google Form.
