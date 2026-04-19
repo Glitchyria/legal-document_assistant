@@ -1,6 +1,6 @@
 # Legal Document Assistant
 
-Agentic AI capstone project for a paralegal or junior lawyer who needs quick, grounded answers from legal documents.
+An Agentic AI capstone project that helps paralegals and junior lawyers ask grounded questions over legal-document review knowledge.
 
 ## Student Details
 
@@ -12,17 +12,26 @@ Agentic AI capstone project for a paralegal or junior lawyer who needs quick, gr
 
 Legal teams spend significant time reading contracts, case notes, filing checklists, and compliance documents. A paralegal or junior lawyer often needs fast answers, but generic chatbots can hallucinate legal details. This project builds a legal document assistant that retrieves from a controlled legal knowledge base, answers only from available context, remembers conversation details during a session, uses a utility tool when needed, and admits uncertainty instead of inventing information.
 
-## Capstone Requirements Covered
+## Key Features
 
-- LangGraph-style `StateGraph` workflow with 8 nodes: memory, router, retrieval, skip retrieval, tool, answer, eval, save.
-- ChromaDB RAG over exactly 10 legal knowledge documents.
-- SentenceTransformer `all-MiniLM-L6-v2` embeddings when installed.
-- MemorySaver with `thread_id` when LangGraph is installed.
-- Tool route for date, deadline, and simple legal fee or page-count calculations.
-- Faithfulness evaluator with retry gate.
-- Streamlit deployment in `capstone_streamlit.py`.
+- RAG-based answers from exactly 10 legal knowledge-base documents.
+- LangGraph-style workflow with 8 nodes: memory, router, retrieval, skip retrieval, tool, answer, eval, and save.
+- Session memory using `thread_id`.
+- Tool route for date, deadline, and simple calculation questions.
+- Faithfulness evaluator with retry logic.
+- Streamlit browser interface.
+- Red-team handling for prompt injection and legal-outcome prediction questions.
 - Baseline evaluation script with RAGAS-style fallback scoring.
-- Tests including memory, out-of-scope, and prompt-injection red-team cases.
+
+## Tech Stack
+
+- Python
+- Streamlit
+- LangGraph
+- ChromaDB
+- SentenceTransformers
+- RAGAS-style evaluation
+- Pytest
 
 ## Project Structure
 
@@ -45,8 +54,6 @@ legal-document-assistant/
   docs/
     Project_Documentation.pdf
     screenshots/
-  submission/
-    Legal_Document_Assistant_Submission.zip
 ```
 
 ## Run Locally
@@ -72,6 +79,14 @@ streamlit run capstone_streamlit.py
 
 The project includes lightweight fallbacks for local demonstration if ChromaDB, SentenceTransformers, or LangGraph are not installed. Install the requirements for the full capstone toolchain.
 
-## Submission
+## Evaluation
 
-Submit the public GitHub repository link, the project ZIP file, and `docs/Project_Documentation.pdf` in the capstone Google Form.
+The project includes tests for retrieval quality, memory, tool routing, prompt-injection refusal, and out-of-scope legal advice boundaries. It also includes a baseline evaluation module with five ground-truth question-answer pairs.
+
+## Documentation
+
+The complete project report is available at:
+
+```text
+docs/Project_Documentation.pdf
+```
